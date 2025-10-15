@@ -7,8 +7,8 @@ import Home from "./pages/Dashboard/Home";
 import Permissions from "./pages/Admin/Permissions";
 import Roles from "./pages/Admin/Roles";
 import Users from "./pages/Admin/Users";
-import Profile from "./pages/User/Profile";
-import Settings from "./pages/User/Settings";
+import UsersPage from "./pages/User/UsersPage";
+// import Settings from "./pages/User/Settings";
 
 export default function App() {
   return (
@@ -22,8 +22,8 @@ export default function App() {
             <Route path="/permissions" element={<Permissions/>} />
           <Route path="/roles" element={<Roles/>} />
           <Route path="/users" element={<Users/>} />
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/settings" element={<Settings/>} />
+           <Route path="/userspage" element={<UsersPage/>} />
+          {/* <Route path="/settings" element={<Settings/>} /> */}
           </Route>
 
           

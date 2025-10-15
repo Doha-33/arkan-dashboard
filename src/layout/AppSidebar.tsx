@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
     icon: <GridIcon />,
     name: "User",
     subItems: [
-      { name: "Profile", path: "/profile", pro: false },
+      { name: "Profile", path: "/userspage", pro: false },
       { name: "Settings", path: "/settings", pro: false },
     ],
   },
