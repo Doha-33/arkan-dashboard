@@ -51,6 +51,8 @@ export default function GenericListPage({ endpoint, headers, title }) {
         data={data}
         onEdit={handleEdit}
         onDelete={handleDelete}
+          onView={(row) => navigate(`/${endpoint}/view/${row.id}`)}
+
       />
     </div>
   );

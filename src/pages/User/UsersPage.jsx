@@ -1,5 +1,9 @@
- import GenericListPage from "../../components/BaseComponents/FullDynamic/GenericListPage";
+import { useParams } from "react-router-dom";
+import GenericListPage from "../../components/BaseComponents/FullDynamic/GenericListPage";
+
 export default function UsersPage() {
+  const { type } = useParams();  
+
   const headers = [
     { key: "id", label: "ID" },
     { key: "name", label: "Name" },
@@ -9,13 +13,15 @@ export default function UsersPage() {
     { key: "coming_affiliate", label: "Coming Affiliate" },
     { key: "active", label: "Active", type: "boolean" },
     { key: "verified_kyc", label: "Verified KYC", type: "boolean" },
-   ];
+  ];
 
   return (
     <GenericListPage
       endpoint="users"
+      params={{ type }} // ✅ ابعت النوع هنا
       headers={headers}
-      title="Users"
+      title={`All ${type}s`}
     />
+
   );
 }

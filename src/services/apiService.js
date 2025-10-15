@@ -1,7 +1,7 @@
 // src/services/apiService.js
 import axios from "axios";
 
-const BASE_URL = "https://656dea5b06d5.ngrok-free.app/api/";
+const BASE_URL = "http://0.0.0.0:8000/api/";
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -12,6 +12,8 @@ const api = axios.create({
 
 // 🟢 Get All
 export const getAll = async (endpoint, params = {}) => {
+  console.log(params);
+  
   const response = await api.get(`/${endpoint}`, { params });  
   return response.data.data;
 };
@@ -24,6 +26,8 @@ export const getOne = async (endpoint, id) => {
 
 // 🟡 Create
 export const createItem = async (endpoint, data) => {
+  console.log("ddd",data);
+  
   const response = await api.post(`/${endpoint}`, data);
   return response.data.data;
 };

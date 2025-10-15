@@ -20,25 +20,19 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
-  },
-  {
-    icon: <GridIcon />,
-    name: "Admin",
-    subItems: [
-      { name: "Users", path: "/users", pro: false },
-      { name: "Roles", path: "/roles", pro: false },
-      { name: "Permissions", path: "/permissions", pro: false },
-    ],
-  },
-  {
-    icon: <GridIcon />,
-    name: "User",
-    subItems: [
-      { name: "Profile", path: "/userspage", pro: false },
-      { name: "Settings", path: "/settings", pro: false },
-    ],
-  },
+    path:"/"
+   },
+
+{
+  icon: <GridIcon />,
+  name: "All User",
+  subItems: [
+    { name: "User", path: "/users", pro: false },
+    { name: "Admin", path: "/user/admin", pro: false },
+    { name: "Guest", path: "/user/guest", pro: false },
+  ],
+},
+
 ];
 
 const othersItems: NavItem[] = [

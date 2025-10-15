@@ -1,39 +1,61 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
-import Home from "./pages/Dashboard/Home";
-import Permissions from "./pages/Admin/Permissions";
-import Roles from "./pages/Admin/Roles";
-import Users from "./pages/Admin/Users";
+
+// ✅ User Pages
 import UsersPage from "./pages/User/UsersPage";
-// import Settings from "./pages/User/Settings";
+import UserFormPage from "./pages/User/UserForm";
+import UserViewPage from "./pages/User/UserViewPage";
+
+ const NotFoundPage = () => (
+  <div className="flex items-center justify-center h-screen text-gray-600 text-xl">
+    404 | Page Not Found
+  </div>
+);
 
 export default function App() {
   return (
-    <>
-      <Router>
-        <ScrollToTop />
-        <Routes>
-          {/* Dashboard Layout */}
-          <Route element={<AppLayout />}>
-            <Route index path="/" element={<Home />} />
-            <Route path="/permissions" element={<Permissions/>} />
-          <Route path="/roles" element={<Roles/>} />
-          <Route path="/users" element={<Users/>} />
-           <Route path="/userspage" element={<UsersPage/>} />
-          {/* <Route path="/settings" element={<Settings/>} /> */}
-          </Route>
+    <Router>
+      <ScrollToTop />
 
-          
-          {/* Auth Layout */}
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+      <Routes>
+        
+        <Route element={<AppLayout />}>
+        
+          {/* ---------- Users Routes ---------- */}
+          <Route path="/users" element={<UsersPage />} />
+          <Route path="/users/create" element={<UserFormPage mode="create" />} />
+          <Route path="/users/edit/:id" element={<UserFormPage mode="edit" />} />
+          <Route path="/users/view/:id" element={<UserViewPage mode="view" />} />
+          {/* ---------- End Users ---------- */}
 
 
-        </Routes>
-      </Router>
-    </>
+
+
+
+
+
+
+
+
+
+
+          {/* ⚙️  Add other layout pages here later */}
+        </Route>
+
+        {/* ===========================
+              🔐 Auth Routes
+        ============================ */}
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        {/* ===========================
+              🚫 404 Page
+        ============================ */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
   );
 }
