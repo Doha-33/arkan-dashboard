@@ -8,6 +8,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import UsersPage from "./pages/User/UsersPage";
 import UserFormPage from "./pages/User/UserForm";
 import UserViewPage from "./pages/User/UserViewPage";
+import Home from "./pages/Dashboard/Home";
 
  const NotFoundPage = () => (
   <div className="flex items-center justify-center h-screen text-gray-600 text-xl">
@@ -24,6 +25,7 @@ export default function App() {
         
         <Route element={<AppLayout />}>
         
+        <Route path="/" element={< Home/>} />
           {/* ---------- Users Routes ---------- */}
           <Route path="/users" element={<UsersPage />} />
           <Route path="/users/create" element={<UserFormPage mode="create" />} />
