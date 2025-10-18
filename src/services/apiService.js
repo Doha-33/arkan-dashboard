@@ -1,7 +1,7 @@
 // src/services/apiService.js
 import axios from "axios";
 
-const BASE_URL = "http://0.0.0.0:8000/api/";
+const BASE_URL = "http://0.0.0.0:8000/api/v1";
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -12,7 +12,6 @@ const api = axios.create({
 
 // 🟢 Get All
 export const getAll = async (endpoint, params = {}) => {
-  console.log(params);
   
   const response = await api.get(`/${endpoint}`, { params });  
   return response.data.data;

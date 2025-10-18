@@ -32,6 +32,11 @@ const navItems: NavItem[] = [
     { name: "Guest", path: "/user/guest", pro: false },
   ],
 },
+{
+    icon: <GridIcon />,
+    name: "Blogs",
+    path:"blogs"
+   },
 
 ];
 

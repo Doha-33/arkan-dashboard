@@ -1,3 +1,5 @@
+// @ts-ignore
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
@@ -8,6 +10,9 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import UsersPage from "./pages/User/UsersPage";
 import UserFormPage from "./pages/User/UserForm";
 import UserViewPage from "./pages/User/UserViewPage";
+import BlogsPage from "./pages/Blogs/BlogsPage";
+import BlogsFormPage from "./pages/Blogs/BlogsFormPage";
+import BlogsViewPage from "./pages/Blogs/BlogsViewPage";
 import Home from "./pages/Dashboard/Home";
 
  const NotFoundPage = () => (
@@ -31,7 +36,13 @@ export default function App() {
           <Route path="/users/create" element={<UserFormPage mode="create" />} />
           <Route path="/users/edit/:id" element={<UserFormPage mode="edit" />} />
           <Route path="/users/view/:id" element={<UserViewPage mode="view" />} />
-          {/* ---------- End Users ---------- */}
+          {/* ---------- End blogs ---------- */}
+             {/* ---------- blogs Routes ---------- */}
+          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/create" element={<BlogsFormPage mode="create" />} />
+          <Route path="/blogs/edit/:id" element={<BlogsFormPage mode="edit" />} />
+          <Route path="/blogs/view/:id" element={<BlogsViewPage mode="view" />} />
+          {/* ---------- End blogs ---------- */}
 
 
 
