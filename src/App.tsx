@@ -7,11 +7,17 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 
 // ✅ User Pages
+// @ts-ignore
 import UsersPage from "./pages/User/UsersPage";
+// @ts-ignore
 import UserFormPage from "./pages/User/UserForm";
+// @ts-ignore
 import UserViewPage from "./pages/User/UserViewPage";
+// @ts-ignore
 import BlogsPage from "./pages/Blogs/BlogsPage";
+// @ts-ignore
 import BlogsFormPage from "./pages/Blogs/BlogsFormPage";
+// @ts-ignore
 import BlogsViewPage from "./pages/Blogs/BlogsViewPage";
 import Home from "./pages/Dashboard/Home";
 
