@@ -19,7 +19,21 @@ import BlogsPage from "./pages/Blogs/BlogsPage";
 import BlogsFormPage from "./pages/Blogs/BlogsFormPage";
 // @ts-ignore
 import BlogsViewPage from "./pages/Blogs/BlogsViewPage";
+// @ts-ignore
 import Home from "./pages/Dashboard/Home";
+// @ts-ignore
+import WalletsPage from './pages/Wallet/WalletsPage';
+// @ts-ignore
+import WalletsFormPage from './pages/Wallet/WalletsFormPage';
+// @ts-ignore
+import WalletsViewPage from './pages/Wallet/WalletsViewPage';
+// @ts-ignore
+import ServicesPage from './pages/Services/ServicesPage';
+// @ts-ignore
+import ServicesFormPage from './pages/Services/ServicesFormPage';
+// @ts-ignore
+import ServicesViewPage from './pages/Services/ServicesViewPage';
+
 
  const NotFoundPage = () => (
   <div className="flex items-center justify-center h-screen text-gray-600 text-xl">
@@ -49,6 +63,18 @@ export default function App() {
           <Route path="/blogs/edit/:id" element={<BlogsFormPage mode="edit" />} />
           <Route path="/blogs/view/:id" element={<BlogsViewPage mode="view" />} />
           {/* ---------- End blogs ---------- */}
+             {/* ---------- wallets Routes ---------- */}
+          <Route path="/wallets" element={<WalletsPage />} />
+          <Route path="/wallets/create" element={<WalletsFormPage mode="create" />} />
+          <Route path="/wallets/edit/:id" element={<WalletsFormPage mode="edit" />} />
+          <Route path="/wallets/view/:id" element={<WalletsViewPage mode="view" />} />
+          {/* ---------- End wallets ---------- */}
+             {/* ---------- Services Routes ---------- */}
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/create" element={<ServicesFormPage mode="create" />} />
+          <Route path="/services/edit/:id" element={<ServicesFormPage mode="edit" />} />
+          <Route path="/services/view/:id" element={<ServicesViewPage mode="view" />} />
+          {/* ---------- End services ---------- */}
 
 
 
