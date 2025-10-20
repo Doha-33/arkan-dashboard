@@ -35,6 +35,21 @@ import ServicesFormPage from './pages/Services/ServicesFormPage';
 import ServicesViewPage from './pages/Services/ServicesViewPage';
 
 
+// @ts-ignore
+import AdsPage from './pages/Ads/AdsPage';
+// @ts-ignore
+import AdFormPage from './pages/Ads/AdFormPage';
+// @ts-ignore
+import AdViewPage from './pages/Ads/AdViewPage';
+
+// @ts-ignore
+import RanksPage from './pages/Rank/RanksPage';
+// @ts-ignore
+import RanksFormPage from './pages/Rank/RanksFormPage';
+// @ts-ignore
+import RanksViewPage from './pages/Rank/RanksViewPage';
+
+
  const NotFoundPage = () => (
   <div className="flex items-center justify-center h-screen text-gray-600 text-xl">
     404 | Page Not Found
@@ -75,6 +90,20 @@ export default function App() {
           <Route path="/services/edit/:id" element={<ServicesFormPage mode="edit" />} />
           <Route path="/services/view/:id" element={<ServicesViewPage mode="view" />} />
           {/* ---------- End services ---------- */}
+
+
+             {/* ---------- Ads Routes ---------- */}
+          <Route path="/ads" element={<AdsPage />} />
+          <Route path="/ads/create" element={<AdFormPage mode="create" />} />
+          <Route path="/ads/edit/:id" element={<AdFormPage mode="edit" />} />
+          <Route path="/ads/view/:id" element={<AdViewPage mode="view" />} />
+          {/* ---------- End ads ---------- */}
+             {/* ---------- Ranks Routes ---------- */}
+          <Route path="/ranks" element={<RanksPage />} />
+          <Route path="/ranks/create" element={<RanksFormPage mode="create" />} />
+          <Route path="/ranks/edit/:id" element={<RanksFormPage mode="edit" />} />
+          <Route path="/ranks/view/:id" element={<RanksViewPage mode="view" />} />
+          {/* ---------- End ranks ---------- */}
 
 
 
